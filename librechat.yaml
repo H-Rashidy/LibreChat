@@ -546,6 +546,17 @@ actions:
 
 # Definition of custom endpoints
 endpoints:
+  all:
+    titleConvo: true
+    titleModel: 'openrouter/free'   # reuses whatever model is selected in the chat
+    titleEndpoint: 'OpenRouter' 
+    titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
+    titleMethod: 'completion'     # default; "structured" if the provider supports it
+    titlePrompt: /
+      Analyze this conversation and provide:
+      1. The detected language of the conversation
+      2. A concise title in the detected language (5 words or less, no punctuation or quotation)
+      {convo}
   # assistants:
   #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
   #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
@@ -963,7 +974,7 @@ endpoints:
         default: []
         fetch: true
       titleConvo: true
-      titleModel: 'meta-llama/llama-3-70b-instruct'
+      titleModel: 'current_model'
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
