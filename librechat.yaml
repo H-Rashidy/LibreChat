@@ -548,7 +548,7 @@ actions:
 endpoints:
   all:
     titleConvo: true
-    titleModel: 'openrouter/google/gemma-4-26b-a4b-it:free'   # reuses whatever model is selected in the chat
+    titleModel: 'google/gemma-4-26b-a4b-it:free'   # reuses whatever model is selected in the chat
     titleEndpoint: 'OpenRouter' 
     titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
     titleMethod: 'completion'     # default; "structured" if the provider supports it
@@ -977,7 +977,7 @@ endpoints:
       titleConvo: true
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
-      titleModel: 'openrouter/google/gemma-4-26b-a4b-it:free'   # reuses whatever model is selected in the chat
+      titleModel: 'google/gemma-4-26b-a4b-it:free'   # reuses whatever model is selected in the chat
       titleEndpoint: 'OpenRouter' 
       titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
       titleMethod: 'completion'     # default; "structured" if the provider supports it
