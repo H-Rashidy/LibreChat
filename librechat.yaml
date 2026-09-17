@@ -548,15 +548,16 @@ actions:
 endpoints:
   all:
     titleConvo: true
-    titleModel: 'openrouter/free'   # reuses whatever model is selected in the chat
+    titleModel: 'openrouter/google/gemma-4-26b-a4b-it:free'   # reuses whatever model is selected in the chat
     titleEndpoint: 'OpenRouter' 
     titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
     titleMethod: 'completion'     # default; "structured" if the provider supports it
-    titlePrompt: /
+    titlePrompt: |
       Analyze this conversation and provide:
       1. The detected language of the conversation
       2. A concise title in the detected language (5 words or less, no punctuation or quotation)
       {convo}
+      Title:
   # assistants:
   #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
   #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
@@ -974,10 +975,18 @@ endpoints:
         default: []
         fetch: true
       titleConvo: true
-      titleModel: 'current_model'
-      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
+      titleModel: 'openrouter/google/gemma-4-26b-a4b-it:free'   # reuses whatever model is selected in the chat
+      titleEndpoint: 'OpenRouter' 
+      titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
+      titleMethod: 'completion'     # default; "structured" if the provider supports it
+      titlePrompt: |
+        Analyze this conversation and provide:
+        1. The detected language of the conversation
+        2. A concise title in the detected language (5 words or less, no punctuation or quotation)
+        {convo}
+        Title:
 
   # AWS Bedrock Example
   # Note: Bedrock endpoint is configured via environment variables
