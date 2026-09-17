@@ -546,18 +546,6 @@ actions:
 
 # Definition of custom endpoints
 endpoints:
-  all:
-    titleConvo: true
-    titleModel: 'liquid/lfm-2.5-1.2b-instruct:free'   # reuses whatever model is selected in the chat
-    titleEndpoint: 'OpenRouter' 
-    titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
-    titleMethod: 'completion'     # default; "structured" if the provider supports it
-    titlePrompt: |
-      Analyze this conversation and provide:
-      1. The detected language of the conversation
-      2. A concise title in the detected language (5 words or less, no punctuation or quotation)
-      {convo}
-      Title:
   # assistants:
   #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
   #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
@@ -977,10 +965,8 @@ endpoints:
       titleConvo: true
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
-      titleModel: 'liquid/lfm-2.5-1.2b-instruct:free'   # reuses whatever model is selected in the chat
-      titleEndpoint: 'OpenRouter' 
-      titleTiming: 'immediate'      # default: title appears ~1–2s after the first message
-      titleMethod: 'completion'     # default; "structured" if the provider supports it
+      titleModel: 'liquid/lfm-2.5-1.2b-instruct:free'
+      titleEndpoint: 'OpenRouter'
       titlePrompt: |
         Analyze this conversation and provide:
         1. The detected language of the conversation
