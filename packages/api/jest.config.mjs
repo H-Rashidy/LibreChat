@@ -1,10 +1,12 @@
-import { maxWorkers } from '../../config/jest.workers.cjs';
+import { maxWorkers, workerIdleMemoryLimit } from '../../config/jest.workers.cjs';
 
 const esModules = [
+  '@librechat/code',
   '@langchain/langgraph',
   '@langchain/langgraph-checkpoint',
   '@langchain/langgraph-sdk',
   '@mistralai/mistralai',
+  '@modelcontextprotocol/ext-apps',
   'domelementtype',
   'domhandler',
   'dom-serializer',
@@ -55,6 +57,7 @@ export default {
   // },
   setupFiles: ['<rootDir>/jest.setup.cjs', '<rootDir>/../../config/jest.setup.logging.cjs'],
   maxWorkers,
+  workerIdleMemoryLimit,
   restoreMocks: true,
   testTimeout: 15000,
 };
